@@ -430,7 +430,6 @@ form input[type=submit] {
   margin: 1rem 0;
   width: 250px;
   font-size: 1.2rem;
-  appearance: none;
 }
 form input[type=submit]:hover {
   background-color: #f7941d;
