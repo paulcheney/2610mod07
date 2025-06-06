@@ -1,0 +1,207 @@
+/* ------------ prevent adjustments of font size after orientation changes.  ------------ */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/* ------------ apply a natural box layout model to all elements ------------ */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: $font-family;
+  font-weight: $font-weight-medium;
+  color: $font-color;
+  display: grid;
+  grid-template-areas: "header" "main" "footer" "nav";
+}
+
+// begin header styling
+#headerWrapper {
+  grid-area: header;
+  border-bottom: 1px solid $color-grey-90;
+}
+
+header {
+  padding: .75rem $gutter;
+  display: grid;
+  grid-template-columns: 25px auto 40px;
+  align-items: end;
+  column-gap: 8px;
+  img {margin-bottom: 5px;}
+  span {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: $font-weight-medium;
+  }
+
+  a {
+    display: block;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $font-color;
+    align-self: start;
+    text-align: right;
+  }
+}
+
+// begin main styles
+main {
+  min-height: 100vh;
+  h1 {
+    color: $color-primary;
+    margin: .5rem $gutter;
+  }
+  p {
+    line-height: 145%;
+    margin: .5rem $gutter;
+  }
+} // end main
+
+
+form {
+  margin: 1rem $gutter;
+  fieldset{
+    border: 1px solid $color-grey-90;
+    margin: 1rem 0;
+    legend {
+      color: $color-secondary;
+      padding: 0 10px;
+    }
+  }
+  label {
+    color: $color-grey-50;
+    display: block;
+    font-size: .8rem;
+    padding-top: .2rem;
+  }
+
+  input[type=text],
+  input[type=tel],
+  input[type=date],
+  input[type=email],
+  select {
+    display: block;
+    margin: .1rem 0 1rem 0 ;
+    border: 1px solid $color-grey-70;
+    border-bottom-right-radius: 16px;
+    border-top-right-radius: 16px;
+    border-left-width: 5px;
+    border-left-color:#555;
+    font-size: 1rem;
+    color: $font-color;
+    width: 250px;
+    padding: .5rem $gutter;
+  }
+
+  input:required {border-left-color: #d70000;}
+  input:focus {border-left-color: black; outline:none;}
+  input:required:valid{border-left-color: green;}
+
+  input[type=radio],
+  input[type=checkbox] {
+    margin: .5rem 0;
+  }
+
+  input[type=submit] {
+    border: none;
+    background-color: $color-primary;
+    color: white;
+    font-weight: $font-weight-bold;
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 1rem 0;
+    width: 250px;
+    font-size: 1.2rem;
+    //-webkit-appearance: none;
+    appearance: none;
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+input:-webkit-autofill{
+  //-webkit-text-fill-color: $font-color;
+}
+
+
+
+
+
+
+
+
+
+// begin navigation styles
+#navWrapper {
+  grid-area: nav;
+  height: 100vh;
+}
+
+nav {
+  a.close {
+    display: block;
+    font-size: 2.3rem;
+    text-decoration: none;
+    color: $font-color;
+    text-align: right;
+    padding: .6rem $gutter
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 0.75rem;
+      color: $font-color;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 4px;
+      text-decoration-color: white;
+      border-bottom: 1px solid $color-grey-95;
+      &:hover {
+        text-decoration-color: $font-color;
+      }
+    }
+
+    li.active a {
+      text-decoration-color: $color-primary;
+    }
+  }
+}
+
+// begin main styling
+#mainWrapper {
+  grid-area: main;
+}
+
+// begin footer styling
+#footerWrapper {
+  grid-area: footer;
+  background-color: $color-grey-90;
+  color: $font-color;
+}
+
+footer {
+  padding: 0.5rem $gutter;
+
+  p {
+    margin: 0;
+    font-weight: $font-weight-light;
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+body {
+  grid-template-areas: "header" "nav" "main" "footer" ;
+}
+
+#headerWrapper {
+  header{
+    padding: 2rem $gutter;
+    a{display: none;}
+  }
+  span {font-size: 1.5rem;}
+} // end header  styles
+
+#navWrapper {height: auto;}
+nav {
+  ul a {border: none;}
+  a.close {display: none; }
+  ul {flex-direction: row;}
+}
